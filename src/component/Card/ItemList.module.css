@@ -1,0 +1,12 @@
+.list{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-evenly;
+    row-gap: 30px;
+    column-gap: 10px;
+    width: auto;
+}

@@ -1,12 +1,19 @@
-.img{
-    width: 100vw;
+ .img{
     height: 100vh;
-    mask-image: linear-gradient(to bottom,transparent 3%,black 50%,transparent 97%);
-    border: 1px solid white;
-}
+    width: 99vw;
+    position: fixed;
+    filter:hue-rotate(150deg);
+    min-width: 1440px;
+
+ }
+ .title{
+    -webkit-text-fill-color: #aaa;
+    text-shadow: 1px 1px 2px #00aeff;
+    padding-left: 25px;
+ }
 .header-main{
     position: fixed;
-    z-index: 99;
+    z-index: 999;
     height: 3rem;
     width: 100vw;
     display: flex;
@@ -21,13 +28,21 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%,0);
-    
 }
 .admin a{
     cursor: pointer;
-    border-right: 3px solid rgba(255,255,255,.5);
-    padding:0 10px;
+    border-right: 4px solid rgba(255,255,255,.5);
+    padding:5px 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    transition: .2s;
+}
+.admin a:last-child{
+    border-right: none;
 }
 .admin a:hover{
-    background-color: rgb(102, 0, 0);
+    color: #00aeff;
+    /* background-color: rgb(102, 0, 0); */
 }

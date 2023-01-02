@@ -1,13 +1,13 @@
 
 import React from 'react';
-import Card from './component/Card/Card';
+import ItemList from './component/Card/ItemList';
 import MainHeader from './component/MainHeader/MainHeader';
 
 
 function App() {
  return (<React.Fragment>
     <MainHeader/>
-
+   <ItemList></ItemList>
  </React.Fragment>);
 }
 

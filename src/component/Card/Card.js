@@ -1,14 +1,22 @@
 import React from "react";
-import classes from './Card.module.css'
-import image from '../Asset/food-table.jpg'
+import classes from "./Card.module.css";
+import image from "../Asset/food-table.jpg";
+import Button from "../Button/Button";
 
-const Card = ()=>{
-    return(<React.Fragment>
-        <div className={classes.card}>
-        <img className={classes['card-img']} src={image}/>
+const Card = () => {
+  return (
+      <div className={classes.card}>
+        <img className={classes["card-img"]} src={image} alt=""/>
         <h2 className={`${classes.name}`}>Butter Chicken</h2>
-    <p className={classes.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius voluptates accusamus consequuntur mollitia. Provident corporis expedita ex iste consequatur nemo quae officia culpa nesciunt quisquam tenetur reprehenderit, omnis vitae. Rem.</p>
-        </div>
-    </React.Fragment>);
-}
+        <p className={classes.description}>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
+          voluptates accusamus consequuntur mollitia. Provident corporis
+          expedita ex iste consequatur nemo quae officia culpa nesciunt quisquam
+          tenetur reprehenderit, omnis vitae. Rem.
+        </p>
+        <Button className={classes.addCart}>Add to Cart</Button>
+        <Button className={classes.order}>Order</Button>
+      </div>
+  );
+};
 export default Card;
