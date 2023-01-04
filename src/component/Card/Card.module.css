@@ -45,7 +45,6 @@
     text-overflow: ellipsis;
     word-break: keep-all;
     font-family: courier;
-
 }
 .description::-webkit-scrollbar{
     display: none;

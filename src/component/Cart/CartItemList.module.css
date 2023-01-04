@@ -1,0 +1,24 @@
+.items-list{
+    background-color: rgba(0,200,255,.8);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 70px;
+    padding: 15px 10px;
+    margin: 2px;
+}
+.items-list button{
+    border: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+    background-image: linear-gradient(to bottom right,rgba(202, 0, 0, 1),rgba(255,10,10,.8) 35% 55%,rgba(202, 0, 0, 1));
+    box-shadow: 1px 1px 1px #444;
+}
+.items-list button:hover{
+    transform: translate(.5px,.5px);
+}
+.cart-count{
+   display: flex;
+   column-gap: 20px;
+}
