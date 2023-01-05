@@ -7,13 +7,11 @@ const Card = () => {
   return (
       <div className={classes.card}>
         <img className={classes["card-img"]} src={image} alt=""/>
-        <h2 className={`${classes.name}`}>Butter Chicken</h2>
-        <p className={classes.description}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
-          voluptates accusamus consequuntur mollitia. Provident corporis
-          expedita ex iste consequatur nemo quae officia culpa nesciunt quisquam
-          tenetur reprehenderit, omnis vitae. Rem.
-        </p>
+        <h4 className={`${classes.name}`}>Butter Chicken</h4>
+        <span className={classes.description}>
+          Lorem, ipsum dolor 
+        </span>
+        <span className={classes.price}><span >₹180</span> for one</span>
         <Button className={classes.addCart}>Add to Cart</Button>
         <Button className={classes.order}>Order</Button>
       </div>

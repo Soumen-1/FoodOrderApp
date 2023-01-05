@@ -1,9 +1,8 @@
 
 import React from "react";
-import mealsimage from "../Asset/food-background.jpg";
 import CartIcon from "../Cart/CartIcon";
 import classes from "./MainHeader.module.css";
-const MainHeader = () => {
+const MainHeader = (props) => {
   return (
     <React.Fragment>
       <div className={classes["header-main"]}>
@@ -13,9 +12,10 @@ const MainHeader = () => {
             <a href="no">Help</a>
             <a href="no">About Us</a>
         </div>
-        <CartIcon></CartIcon>
+        <CartIcon cartState={props.cartState} cartCount={props.cartCount} onCartHandler={props.onCartHandler}></CartIcon>
       </div>
-      <img className={classes.img}src={mealsimage} alt="food"/>
+      <div className={classes.body}></div>
+      
     </React.Fragment>
   );
 };

@@ -1,10 +1,10 @@
- .img{
-    height: 100vh;
-    width: 99vw;
+ 
+ .body{
     position: fixed;
-    filter:hue-rotate(150deg);
-    min-width: 1440px;
-
+    height: 100vh;
+    width: 100vw;
+    background-color: #d4d4d4;
+    filter: blur(10%);
  }
  .title{
     -webkit-text-fill-color: #aaa;
