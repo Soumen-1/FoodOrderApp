@@ -24,11 +24,11 @@ const TotalCartItem = [
   },
 ];
 const CountcartHandler = (state, action) => {
-  if (action.type == "decrease") {
+  if (action.type === "decrease") {
     return { count: state.count - action.count };
-  } else if (action.type == "increase") {
+  } else if (action.type === "increase") {
     return { count: state.count + action.count };
-  } else if (action.type == "count") {
+  } else if (action.type === "count") {
     return { count: action.count };
   }
 };
@@ -48,7 +48,10 @@ function App() {
   const cartCountHandler = (action) => {
     setCartCount(action);
   };
-
+  const [cartItem,setCartItem] = useState(TotalCartItem);
+  const cartItemCount=(cart)=>{
+    setCartItem(cart);
+  }
   return (
     <React.Fragment>
       <CartContext.Provider
@@ -63,9 +66,10 @@ function App() {
       <ItemList></ItemList>
       {visibleCart && (
         <CartItem
+        cartItemCount = {cartItemCount}
           cartHandler={{ cartHandler: cartHandler, visibleCart: visibleCart }}
           onCartCount={cartCountHandler}
-          list={TotalCartItem}
+          list={cartItem}
         ></CartItem>
       )}
     </React.Fragment>
