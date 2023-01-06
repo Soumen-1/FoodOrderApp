@@ -11,7 +11,7 @@ const Card = () => {
         <span className={classes.description}>
           Lorem, ipsum dolor 
         </span>
-        <span className={classes.price}><span >₹180</span> for one</span>
+        <span className={classes.price}>₹<span>180.00</span> for one</span>
         <Button className={classes.addCart}>Add to Cart</Button>
         <Button className={classes.order}>Order</Button>
       </div>

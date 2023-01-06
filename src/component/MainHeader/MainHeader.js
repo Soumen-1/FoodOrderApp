@@ -12,7 +12,7 @@ const MainHeader = (props) => {
             <a href="no">Help</a>
             <a href="no">About Us</a>
         </div>
-        <CartIcon cartState={props.cartState} cartCount={props.cartCount} onCartHandler={props.onCartHandler}></CartIcon>
+        <CartIcon></CartIcon>
       </div>
       <div className={classes.body}></div>
       

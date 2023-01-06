@@ -1,5 +1,10 @@
+import React from "react";
 
+const CartContext = React.createContext({
+    cartState:false,
+    cartCount:0,
+    onCartHandler:()=>{}
 
-const CartContext = React.createContext();
+});
 
 export default CartContext;
