@@ -1,6 +1,6 @@
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
 import classes from "./CartItemList.module.css";
-
+import image from "../Asset/juice.png";
 const CartItemList = (props) => {
   const item = props.item;
   const count = useRef();
@@ -18,27 +18,31 @@ const CartItemList = (props) => {
       setTotalPrice((e) => e - item.price);
       item.quantity = +item.quantity - 1;
       props.onCartCount({ type: "decrease", count: 1 });
-    } else if(Number(item.quantity) === 1){
+    } else if (Number(item.quantity) === 1) {
       item.quantity = 0;
-      let list = props.list.filter((obj)=>{
+      let list = props.list.filter((obj) => {
         return obj.name !== item.name;
       });
       props.cartItemCount(list);
       props.onCartCount({ type: "decrease", count: 1 });
       setTotalPrice(0);
     }
+    console.log("in cart Item");
     props.dummy.dummyHandler(props.dummy.dummy);
   };
-
   return (
     <li className={classes["items-list"]}>
-      <span>{item.name}</span>
+      <img className={classes.img} src={require("../Asset/juice.png")} />
+      <div className={classes.name}>
+        <span>{item.name}</span>
+        <span>{item.description}</span>
+      </div>
       <span className={classes["cart-count"]}>
-        <button onClick={increaseHandler}>+</button>
-        <span ref={count}>{item.quantity}</span>
         <button onClick={decreaseHandler}>-</button>
+        <span ref={count}>{item.quantity}</span>
+        <button onMouseUp={increaseHandler}>+</button>
       </span>
-      <span>{`₹ ${totalPrice.toFixed(2)}`}</span>
+      <span className={classes.price}>{`₹ ${totalPrice.toFixed(2)}`}</span>
     </li>
   );
 };

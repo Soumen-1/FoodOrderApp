@@ -3,25 +3,33 @@ import ItemList from "./component/Card/ItemList";
 import CartItem from "./component/Cart/CartItem";
 import CartContext from "./component/Context/CartContext/CartContext";
 import MainHeader from "./component/MainHeader/MainHeader";
+import image from '../src/component/Asset/juice.png'
 const TotalCartItem = [
+  
   { 
     _id: 'friedrice',
     name: "Fried Rice",
+    src:require('../src/component/Asset/juice.png'),
+    description:"rice rice rice rice rice rice rice",
     price: 120.4,
     quantity: 10,
   },
   {
     _id:'chickenkosha',
     name: "Chicken Kosha",
+    src:'../Asset/juice.png',
+    description:"rice rice rice rice rice rice ",
     price: 180.7,
     quantity: 8,
   },
   { 
     _id:'mixedveg',
     name: "Mixed Veg",
+    src:'../Asset/juice.png',
+    description:"rice rice rice rice rice rice" ,
     price: 140.2,
     quantity: 6,
-  },
+  }
 ];
 const CountcartHandler = (state, action) => {
   if (action.type === "decrease") {
@@ -67,7 +75,6 @@ function App() {
       {visibleCart && (
         <CartItem
         cartItemCount = {cartItemCount}
-          cartHandler={{ cartHandler: cartHandler, visibleCart: visibleCart }}
           onCartCount={cartCountHandler}
           list={cartItem}
         ></CartItem>
