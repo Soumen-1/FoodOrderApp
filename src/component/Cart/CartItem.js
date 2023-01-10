@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useContext} from "react";
+import CartContext from "../Context/CartContext/CartContext";
 import classes from "./CartItem.module.css";
 import CartItemList from "./CartItemList";
 import Modal from "./Modal/Modal";
 const CartItem = (props) => {
-  const list = props.list;
+  const cartCtx = useContext(CartContext);
+  const list = cartCtx.cartItem;
   // console.log(arr);
   const [dummy, setdummy] = useState(1);
 
@@ -11,7 +13,7 @@ const CartItem = (props) => {
   useEffect(() => {
     let count = 0;
     list.forEach((obj) => {
-      count += obj.price * +obj.quantity;
+      count += (+obj.price) * (+ obj.quantity);
     });
     setCartTotal(count.toFixed(2));
   }, [list, dummy]);
@@ -32,9 +34,7 @@ const CartItem = (props) => {
             {list.map((obj) => (
               <CartItemList
                 dummy={{ dummy: dummy, dummyHandler: dummyHandler }}
-                cartItemCount={props.cartItemCount}
                 list={list}
-                onCartCount={props.onCartCount}
                 key={obj.name}
                 item={obj}
               ></CartItemList>

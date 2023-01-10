@@ -29,7 +29,12 @@
     height: 120px;
     margin-right: 2%;
 }
-
+.description{
+    overflow: hidden;
+    font-size: 15px;
+    display: block;
+    height: 50%;
+}
 .cart-count {
     width: 23%;
     height: 30px;

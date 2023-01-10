@@ -2,16 +2,11 @@ import React from "react";
 import Card from "./Card";
 import classes from './ItemList.module.css'
 
-const ItemList=() =>{
+const ItemList=(props) =>{
 return(<div className={classes['list']}>
-    <Card></Card>
-    <Card></Card><Card></Card><Card></Card>
-    <Card></Card> <Card></Card> <Card></Card> <Card></Card>
-    <Card></Card>
-     <Card></Card> 
-     <Card></Card> 
-     <Card></Card>
-    
+    {
+        props.itemList.map((obj)=><Card item ={obj} key={obj._id}></Card>)
+    }
 </div>);
 }
 

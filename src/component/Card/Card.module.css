@@ -12,7 +12,7 @@
     filter:blur();
 }
 .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.2,1.3);
     z-index: 1;
 }
 
@@ -30,14 +30,20 @@
     position: absolute;
     top: 118px;
     left: 10px;
-    width: 50%;
+    width: 100%;
+    height: 20px ;
+    overflow-x: scroll;
     font-family: verdana;
+}
+.name::-webkit-scrollbar{
+    display: none;
 }
 .price{
     position: absolute;
-    right: 0px;
+    right: -15px;
     width: 40%;
-    bottom: 50px;
+    bottom: 45px;
+    float: right;
 }
 .price span{
     font-weight: 600;
@@ -45,10 +51,11 @@
 }
 .description {
     position: absolute;
-    top: 175px;
+    top: 165px;
     left: 10px;
-    width: 45%;
-    height: 90px;
+    width: 55%;
+    height: 60px;
+    font-size: 14px;
     box-sizing: border-box;
     overflow: scroll;
     text-overflow: ellipsis;

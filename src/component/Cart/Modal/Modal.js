@@ -8,7 +8,7 @@ const Item =(props)=>{
 const Modal = (props)=>{
     return <React.Fragment>
         {ReactDOM.createPortal(<Item
-        >{props.children}</Item>,document.getElementById('cart'))}
+        >{props.children}</Item>,document.querySelector('#cart'))}
     </React.Fragment>
 }
 

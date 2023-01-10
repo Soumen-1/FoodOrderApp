@@ -2,7 +2,7 @@
 import React from "react";
 import CartIcon from "../Cart/CartIcon";
 import classes from "./MainHeader.module.css";
-const MainHeader = (props) => {
+const MainHeader = () => {
   return (
     <React.Fragment>
       <div className={classes["header-main"]}>
