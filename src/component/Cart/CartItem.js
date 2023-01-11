@@ -3,7 +3,7 @@ import CartContext from "../Context/CartContext/CartContext";
 import classes from "./CartItem.module.css";
 import CartItemList from "./CartItemList";
 import Modal from "./Modal/Modal";
-const CartItem = (props) => {
+const CartItem = () => {
   const cartCtx = useContext(CartContext);
   const list = cartCtx.cartItem;
   // console.log(arr);
@@ -20,6 +20,7 @@ const CartItem = (props) => {
   const dummyHandler = (val) => {
     setdummy(!val);
   };
+  console.log(list);
   return (
     <Modal >
       <div className={classes["cart-header"]}>

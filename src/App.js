@@ -1,9 +1,7 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useState } from "react";
 import ItemList from "./component/Card/ItemList";
 import CartItem from "./component/Cart/CartItem";
-import CartContext, {
-  CartContextProvider,
-} from "./component/Context/CartContext/CartContext";
+import { CartContextProvider } from "./component/Context/CartContext/CartContext";
 import MainHeader from "./component/MainHeader/MainHeader";
 
 const TOTAL_CART_ITEM = [
@@ -160,11 +158,12 @@ function App() {
         list={TOTAL_CART_ITEM}
         visibleCart={visibleCart}
         cartHandler={cartHandler}
+        itemList={ITEM_LIST}
       >
         <MainHeader></MainHeader>
         {visibleCart && <CartItem></CartItem>}
+        <ItemList></ItemList>
       </CartContextProvider>
-      <ItemList itemList={ITEM_LIST}></ItemList>
     </React.Fragment>
   );
 }

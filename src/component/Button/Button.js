@@ -1,7 +1,7 @@
 import classes from './Button.module.css'
-const Button = (prop)=>{
-    return (<button className={`${prop.className} ${classes.btn}`}>
-        {prop.children}
+const Button = (props)=>{
+    return (<button className={`${props.className} ${classes.btn}`} onClick={props.onclick}>
+        {props.children}
     </button>);
 }
 export default Button;

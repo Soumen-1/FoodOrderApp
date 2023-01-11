@@ -10,7 +10,7 @@ const CountcartHandler = (state, action) => {
   }
 };
 const CartContextProvider = (props) => {
-  
+
   const [cartCount, setCartCount] = useReducer(CountcartHandler, { count: 0 });
   const [cartItem, setCartItem] = useState(props.list);
   const cartCountHandler = (action) => {
@@ -22,9 +22,10 @@ const CartContextProvider = (props) => {
     cartItem.forEach((obj) => {
       count += Number(obj.quantity);
     });
-    console.log('in effect');
+    
     cartCountHandler({ type: "count", count: count });
-  }, []);
+  },[cartItem]);
+
   const cartItemCount = (cartItem) => {
     setCartItem(cartItem);
   };
@@ -33,6 +34,7 @@ const CartContextProvider = (props) => {
     <CartContext.Provider
       value={{
         cartItem: cartItem,
+        itemList:props.itemList,
         visibleCart: props.visibleCart,
         cartCount: cartCount.count,
         cartHandler: props.cartHandler,
@@ -47,6 +49,7 @@ const CartContextProvider = (props) => {
 
 const CartContext = React.createContext({
   cartItem: [],
+  itemList:[],
   visibleCart: null,
   cartCount: 0,
   cartHandler: () => {},
